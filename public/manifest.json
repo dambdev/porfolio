@@ -1,0 +1,31 @@
+{
+  "name": "Porfolio de dambdev",
+  "short_name": "dambdev",
+  "description": "Desarrollador web Full Stack especializado en crear aplicaciones web modernas, responsivas y de alto rendimiento.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#003",
+  "theme_color": "#003",
+  "icons": [
+    {
+      "src": "/favicons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/ms-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
