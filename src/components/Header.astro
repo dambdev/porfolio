@@ -33,12 +33,16 @@ import { navItems } from '../constants/navigation.js'
       class='hidden peer-checked:flex flex-col items-end gap-4 px-4 pt-14 pb-4 text-sm font-semibold fixed top-0 right-0 shadow-md backdrop-blur-sm rounded-bl-xl'
     >
       <button id='mobile-theme-toggle' class='cursor-pointer hover:text-blue-500 transition-all'>
-        <Moon class='dark:hidden size-5' />
-        <Sun class='hidden dark:inline size-5' />
+        <Moon class='dark:hidden size-7' />
+        <Sun class='hidden dark:inline size-7' />
       </button>
       {
         navItems.map(link => (
-          <a class='hover:text-blue-500 transition-all' aria-label={link.label} href={link.url}>
+          <a
+            class='hover:text-blue-500 transition-all text-lg'
+            aria-label={link.label}
+            href={link.url}
+          >
             {link.title}
           </a>
         ))
