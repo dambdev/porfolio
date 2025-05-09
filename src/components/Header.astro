@@ -1,0 +1,77 @@
+---
+import Moon from '../icons/Moon.astro'
+import Sun from '../icons/Sun.astro'
+import Hamburguer from '../icons/Hamburguer.astro'
+import { navItems } from '../constants/navigation.js'
+---
+
+<header class='fixed top-2 z-10 flex items-center justify-center w-full mx-auto' role='banner'>
+  <nav
+    class='hidden sm:flex justify-center items-center px-4 py-2 gap-x-4 text-sm font-semibold rounded-full shadow-md bg-gray-100 dark:bg-gray-800 border border-gray-200/50 dark:border-gray-700/50'
+    aria-label='Navegación principal'
+  >
+    {
+      navItems.map(link => (
+        <a class='hover:text-blue-500 transition-all' aria-label={link.label} href={link.url}>
+          {link.title}
+        </a>
+      ))
+    }
+    <button id='theme-toggle' class='cursor-pointer hover:text-blue-500 transition-all'>
+      <Moon class='dark:hidden size-5' />
+      <Sun class='hidden dark:inline size-5' />
+    </button>
+  </nav>
+
+  <div class='sm:hidden'>
+    <input type='checkbox' id='menu-toggle' class='hidden peer' />
+    <label for='menu-toggle' class='cursor-pointer block fixed top-3 right-3 z-20'>
+      <Hamburguer class='size-9 peer-checked:hidden' />
+    </label>
+    <nav
+      id='mobile-menu'
+      class='hidden peer-checked:flex flex-col items-end gap-4 px-4 pt-14 pb-4 text-sm font-semibold fixed top-0 right-0 shadow-md backdrop-blur-sm rounded-bl-xl'
+    >
+      <button id='mobile-theme-toggle' class='cursor-pointer hover:text-blue-500 transition-all'>
+        <Moon class='dark:hidden size-5' />
+        <Sun class='hidden dark:inline size-5' />
+      </button>
+      {
+        navItems.map(link => (
+          <a class='hover:text-blue-500 transition-all' aria-label={link.label} href={link.url}>
+            {link.title}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <style>
+    nav {
+      animation: nav-shadow 150ms ease;
+      animation-timeline: scroll();
+      animation-range: 0 100px;
+      transition: all 150ms ease;
+    }
+
+    @keyframes nav-shadow {
+      0% {
+        background-color: transparent;
+        box-shadow: none;
+
+        border-color: transparent;
+      }
+    }
+  </style>
+
+  <script>
+    import { initTheme, initThemeToggle } from '../scripts/theme-toggle.js'
+    import { initActiveNav } from '../scripts/active-nav.js'
+    import { initMobileMenuClose } from '../scripts/close-mobile-menu.js'
+
+    initTheme()
+    initActiveNav()
+    initMobileMenuClose()
+    initThemeToggle()
+  </script>
+</header>
