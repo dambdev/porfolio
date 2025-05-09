@@ -1,6 +1,9 @@
 ---
+import Experience from '../components/Experience.astro'
 import Hero from '../components/Hero.astro'
 import SectionContainer from '../components/SectionContainer.astro'
+import TitleSection from '../components/TitleSection.astro'
+import BriefcaseIcon from '../icons/Briefcase.astro'
 import Layout from '../layouts/Layout.astro'
 import '../styles/global.css'
 ---
@@ -9,6 +12,13 @@ import '../styles/global.css'
   <main class='mx-4 flex-grow space-y-24 lg:space-y-32'>
     <SectionContainer id='inicio' class='mt-24 lg:mt-32'>
       <Hero />
+    </SectionContainer>
+    <SectionContainer id='experiencia'>
+      <TitleSection>
+        <BriefcaseIcon class='size-8' />
+        Experiencia técnica
+      </TitleSection>
+      <Experience />
     </SectionContainer>
   </main>
 </Layout>
