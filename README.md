@@ -18,8 +18,9 @@ Este es mi sitio web personal de portfolio desarrollado con [Astro](https://astr
 - [Astro](https://astro.build)
 - [React](https://react.dev)
 - [Tailwind CSS](https://tailwindcss.com)
-- [TypeScript](https://www.typescriptlang.org/)
+- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 - [Sonner](https://sonner.emilkowal.ski/) (notificaciones)
+- [Formspree](https://formspree.io/) (envío de formulario)
 
 ## 💻 Desarrollo local
 
