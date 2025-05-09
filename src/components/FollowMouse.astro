@@ -1,0 +1,25 @@
+<div
+  id='follow-mouse'
+  class='fixed rounded-full size-2 pointer-events-none z-20 bg-black/30 dark:bg-white/30 hidden lg:block shadow-[0_0_20px_5px_rgba(0,0,0,0.9)] dark:shadow-[0_0_20px_5px_rgba(255,255,255,0.9)]'
+>
+</div>
+
+<script>
+  const cursor = document.querySelector('#follow-mouse') as HTMLElement
+
+  const handleMove = (event: MouseEvent) => {
+    if (cursor) {
+      const x = event.clientX - cursor.offsetWidth / 2
+      const y = event.clientY - cursor.offsetHeight / 2
+
+      cursor.style.left = `${x}px`
+      cursor.style.top = `${y}px`
+    }
+  }
+
+  window.addEventListener('mousemove', handleMove)
+
+  document.addEventListener('astro:unmount', () => {
+    window.removeEventListener('mousemove', handleMove)
+  })
+</script>

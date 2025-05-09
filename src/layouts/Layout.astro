@@ -1,4 +1,5 @@
 ---
+import FollowMouse from '../components/FollowMouse.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import { SITE } from '../constants/site.js'
@@ -46,9 +47,11 @@ import { SITE } from '../constants/site.js'
 
   <body
     class='text-pretty text-black dark:text-white flex flex-col min-h-dvh w-full transition-all
+      lg:cursor-none lg:[&_a]:cursor-none lg:[&_button]:cursor-none lg:[&_input]:cursor-none lg:[&_textarea]:cursor-none lg:[&_label]:cursor-none
       bg-[radial-gradient(125%_125%_at_50%_10%,#ffe_40%,#63e_100%)]
       dark:bg-[radial-gradient(125%_125%_at_50%_10%,#003_40%,#63e_100%)]'
   >
+    <FollowMouse />
     <Header />
     <slot />
     <Footer />
