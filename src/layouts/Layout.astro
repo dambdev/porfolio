@@ -42,7 +42,8 @@ import { SITE } from '../constants/site.js'
 
     <meta name='msapplication-TileColor' content='#000033' />
     <meta name='msapplication-TileImage' content='/favicons/ms-icon-144x144.png' />
-    <meta name='theme-color' content='#000033' />
+    <meta name='theme-color' content='#ffe' media='(prefers-color-scheme: light)' />
+    <meta name='theme-color' content='#000033' media='(prefers-color-scheme: dark)' />
     <meta name='color-scheme' content='dark light' />
     <meta name='generator' content={Astro.generator} />
   </head>
