@@ -11,7 +11,6 @@ export default defineConfig({
   integrations: [
     react(),
     robotsTxt({
-      host: 'https://damb.dev',
       policy: [
         {
           userAgent: '*',
