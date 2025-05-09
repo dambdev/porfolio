@@ -3,9 +3,11 @@ import profileImage from '../assets/images/dambdev.webp'
 const personalImageAlt = 'Logo de DambDev'
 ---
 
-<article class='flex flex-col items-center gap-x-20 text-gray-700 dark:text-gray-300 lg:flex-row'>
+<article
+  class='group flex flex-col lg:flex-row items-center gap-y-12 lg:gap-y-0 lg:gap-x-20 text-gray-700 dark:text-gray-300'
+>
   <div
-    class='[&>p]:mb-4 [&>p>strong]:text-blue-500 dark:[&>p>strong]:text-yellow-500 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 lg:order-1'
+    class='[&>p:not(:last-child)]:mb-4 [&>p>strong]:text-blue-500 dark:[&>p>strong]:text-yellow-500 order-2 lg:order-1'
   >
     <p>
       Cuento con <strong>más de 1 año de experiencia</strong> creando aplicaciones web modernas.
@@ -28,7 +30,7 @@ const personalImageAlt = 'Logo de DambDev'
     </p>
   </div>
   <img
-    class='hidden order-1 size-64 object-cover rounded-xl shadow-md shadow-black/50 lg:block'
+    class='size-64 object-cover rounded-xl shadow-md shadow-black/50 order-1 lg:order-2 lg:mb-0 lg:group-hover:contrast-125 transition-all'
     src={profileImage.src}
     alt={personalImageAlt}
   />
