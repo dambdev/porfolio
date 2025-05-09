@@ -7,7 +7,7 @@ import { navItems } from '../constants/navigation.js'
 
 <header class='fixed top-2 z-10 flex items-center justify-center w-full mx-auto' role='banner'>
   <nav
-    class='hidden sm:flex justify-center items-center px-4 py-2 gap-x-4 text-sm font-semibold rounded-full shadow-md bg-gray-100 dark:bg-gray-800 border border-gray-200/50 dark:border-gray-700/50'
+    class='nav-animation hidden sm:flex justify-center items-center px-4 py-2 gap-x-4 text-sm font-semibold rounded-full shadow-md bg-gray-100 dark:bg-gray-800 border border-gray-200/50 dark:border-gray-700/50'
     aria-label='Navegación principal'
   >
     {
@@ -47,18 +47,17 @@ import { navItems } from '../constants/navigation.js'
   </div>
 
   <style>
-    nav {
-      animation: nav-shadow 150ms ease;
+    .nav-animation {
+      animation: nav-animation 150ms ease;
       animation-timeline: scroll();
-      animation-range: 0 100px;
+      animation-range: 0 150px;
       transition: all 150ms ease;
     }
 
-    @keyframes nav-shadow {
+    @keyframes nav-animation {
       0% {
         background-color: transparent;
         box-shadow: none;
-
         border-color: transparent;
       }
     }
