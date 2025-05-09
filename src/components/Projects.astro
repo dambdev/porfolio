@@ -1,0 +1,53 @@
+---
+import { PROJECTS } from '../constants/projects.js'
+import GitHubIcon from '../icons/GitHub.astro'
+import LinkIcon from '../icons/Link.astro'
+import LinkButton from './LinkButton.astro'
+---
+
+<ol>
+  {
+    PROJECTS.map(project => (
+      <li class='mb-16'>
+        <article class='group'>
+          <h3 class='text-2xl mb-4 font-bold text-gray-600 dark:text-gray-300'>{project.title}</h3>
+          <div class='flex flex-col lg:flex-row gap-y-8 lg:gap-y-0 lg:gap-x-8'>
+            <img
+              alt={`Imagen del proyecto ${project.title}`}
+              class='object-cover h-full scale-105 lg:w-1/2 lg:transition-all lg:opacity-80 lg:group-hover:opacity-100'
+              src={project.image.src}
+            />
+            <div>
+              <div class='flex flex-wrap'>
+                <ul class='flex gap-x-4 w-full'>
+                  {project.tags.map(tag => (
+                    <li>
+                      <span class='flex rounded-xl bg-gray-100 dark:bg-gray-800 p-3'>
+                        <tag.icon class='size-6' />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p class='my-8 text-gray-700 dark:text-gray-400 w-full'>{project.description}</p>
+                <footer class='flex gap-x-4'>
+                  {project.github && (
+                    <LinkButton href={project.github} icon={GitHubIcon}>
+                      <GitHubIcon class='size-4' />
+                      Código
+                    </LinkButton>
+                  )}
+                  {project.link && (
+                    <LinkButton href={project.link} icon={LinkIcon}>
+                      <LinkIcon class='size-4' />
+                      Ver
+                    </LinkButton>
+                  )}
+                </footer>
+              </div>
+            </div>
+          </div>
+        </article>
+      </li>
+    ))
+  }
+</ol>
