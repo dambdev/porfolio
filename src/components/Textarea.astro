@@ -1,0 +1,31 @@
+<textarea
+  {...Astro.props}
+  class='p-2 border border-gray-300 dark:border-gray-600 bg-white/20 dark:bg-black/10 rounded-xl focus:outline-none focus:ring-1 focus:ring-blue-500 dark:focus:ring-yellow-500 resize-none placeholder:text-gray-600/50 dark:placeholder:text-gray-300/50'
+  name='message'
+  id='message'
+  placeholder='Escribe tu mensaje...'
+  rows='3'
+  minlength='10'
+  maxlength='1000'
+  required
+  data-auto-resize='true'
+  autocomplete='off'
+>
+</textarea>
+
+<script>
+  const autoResizeTextareas = document.querySelectorAll('textarea[data-auto-resize="true"]')
+
+  function autoResizeTextarea(textarea: HTMLTextAreaElement): void {
+    textarea.style.height = 'auto'
+    textarea.style.height = textarea.scrollHeight + 'px'
+  }
+
+  autoResizeTextareas.forEach(textarea => {
+    autoResizeTextarea(textarea as HTMLTextAreaElement)
+
+    textarea.addEventListener('input', () => {
+      autoResizeTextarea(textarea as HTMLTextAreaElement)
+    })
+  })
+</script>

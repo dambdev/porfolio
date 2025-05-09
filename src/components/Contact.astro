@@ -1,0 +1,44 @@
+---
+import Button from './Button.astro'
+import Input from './Input.astro'
+import Label from './Label.astro'
+import MailIcon from '../icons/Mail.astro'
+import Textarea from './Textarea.astro'
+import TrashIcon from '../icons/Trash.astro'
+import ContactToaster from './ContactToaster.jsx'
+---
+
+<div class='lg:flex items-center'>
+  <form class='flex flex-col gap-3 lg:w-2/3' id='contactForm'>
+    <Label for='name'>Nombre</Label>
+    <Input id='name' name='name' placeholder='Escribe tu nombre' type='text' autocomplete='name' />
+    <Label for='email'>Email</Label>
+    <Input
+      id='email'
+      name='email'
+      placeholder='Escribe tu email'
+      type='email'
+      autocomplete='email'
+    />
+    <Label for='message'>Mensaje</Label>
+    <Textarea id='message' name='message' />
+    <div class='flex gap-x-4 mt-4'>
+      <Button type='submit'>
+        <MailIcon class='size-5' />
+        Enviar
+      </Button>
+      <Button type='reset'>
+        <TrashIcon class='size-5' />
+        Limpiar
+      </Button>
+    </div>
+  </form>
+</div>
+
+<ContactToaster client:load />
+
+<script>
+  import { initContactForm } from '../scripts/contact-form'
+
+  document.addEventListener('DOMContentLoaded', initContactForm)
+</script>

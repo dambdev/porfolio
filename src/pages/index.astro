@@ -1,5 +1,6 @@
 ---
 import AboutMe from '../components/AboutMe.astro'
+import Contact from '../components/Contact.astro'
 import Experience from '../components/Experience.astro'
 import Hero from '../components/Hero.astro'
 import Projects from '../components/Projects.astro'
@@ -7,6 +8,7 @@ import SectionContainer from '../components/SectionContainer.astro'
 import TitleSection from '../components/TitleSection.astro'
 import BriefcaseIcon from '../icons/Briefcase.astro'
 import CodeIcon from '../icons/Code.astro'
+import MailIcon from '../icons/Mail.astro'
 import ProfileCheckIcon from '../icons/ProfileCheck.astro'
 import Layout from '../layouts/Layout.astro'
 import '../styles/global.css'
@@ -37,6 +39,13 @@ import '../styles/global.css'
         Sobre mí
       </TitleSection>
       <AboutMe />
+    </SectionContainer>
+    <SectionContainer id='contacto'>
+      <TitleSection>
+        <MailIcon class='size-8' />
+        Contacto
+      </TitleSection>
+      <Contact />
     </SectionContainer>
   </main>
 </Layout>
