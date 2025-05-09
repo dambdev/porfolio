@@ -1,6 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro'
 import '../styles/global.css'
+import Hero from '../components/Hero.astro'
+import Layout from '../layouts/Layout.astro'
+import SectionContainer from '../components/SectionContainer.astro'
 ---
 
-<Layout />
+<Layout>
+  <main class='mx-4 flex-grow space-y-24 lg:space-y-32'>
+    <SectionContainer id='inicio' class='mt-24 lg:mt-32'>
+      <Hero />
+    </SectionContainer>
+  </main>
+</Layout>

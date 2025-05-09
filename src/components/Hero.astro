@@ -1,0 +1,23 @@
+---
+import Badge from '../components/Badge.astro'
+import SocialPill from '../components/SocialPill.astro'
+import LinkedInIcon from '../icons/LinkedIn.astro'
+import MailIcon from '../icons/Mail.astro'
+---
+
+<Badge>Disponible para trabajar</Badge>
+<h1 class='text-4xl lg:text-5xl my-8 font-bold'>Hola, soy dambdev</h1>
+<p class='text-xl mb-8 text-gray-800 dark:text-gray-300 max-w-md'>
+  <strong class='text-blue-600 dark:text-yellow-400'>Desarrollador Web Full Stack</strong> de Coruña.
+  Especializado en el desarrollo de aplicaciones web únicas e innovadoras.
+</p>
+<nav class='flex flex-wrap gap-x-4'>
+  <SocialPill href='/#contacto'>
+    <MailIcon class='size-4' />
+    Contáctame
+  </SocialPill>
+  <SocialPill href='https://linkedin.com/in/dambdev' target='_blank'>
+    <LinkedInIcon class='size-4' />
+    LinkedIn
+  </SocialPill>
+</nav>
