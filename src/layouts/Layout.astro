@@ -42,14 +42,13 @@ import { SITE } from '../constants/site.js'
 
     <meta name='msapplication-TileColor' content='#000033' />
     <meta name='msapplication-TileImage' content='/favicons/ms-icon-144x144.png' />
-    <meta name='theme-color' content='#ffe' media='(prefers-color-scheme: light)' />
-    <meta name='theme-color' content='#000033' media='(prefers-color-scheme: dark)' />
-    <meta name='color-scheme' content='dark light' />
+    <meta name='theme-color' content='#ffe' />
+    <meta name='color-scheme' content='light' />
     <meta name='generator' content={Astro.generator} />
   </head>
 
   <body
-    class='text-pretty text-black dark:text-white flex flex-col min-h-dvh w-full transition-all
+    class='text-pretty text-black dark:text-white flex flex-col min-h-dvh w-full
       lg:cursor-none lg:[&_a]:cursor-none lg:[&_button]:cursor-none lg:[&_input]:cursor-none lg:[&_textarea]:cursor-none lg:[&_label]:cursor-none
       bg-[radial-gradient(125%_125%_at_50%_10%,#ffe_40%,#63e_100%)]
       dark:bg-[radial-gradient(125%_125%_at_50%_10%,#003_40%,#63e_100%)]'
