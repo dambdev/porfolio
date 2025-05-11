@@ -15,6 +15,7 @@ import LinkButton from './LinkButton.astro'
             <img
               alt={`Imagen del proyecto ${project.title}`}
               class='object-cover h-full scale-105 lg:w-1/2 lg:transition-all lg:opacity-80 lg:group-hover:opacity-100'
+              loading='lazy'
               src={project.image.src}
             />
             <div>
