@@ -26,7 +26,7 @@ export function initActiveNav() {
     let currentSection = null
 
     for (const section of sections) {
-      const offset = window.innerWidth >= 1024 ? 150 : 120
+      const offset = window.innerWidth >= 1024 ? 127 : 95
 
       if (scrollY >= section.element.offsetTop - offset) {
         currentSection = section
