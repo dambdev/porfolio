@@ -12,7 +12,12 @@ import { navItems } from '../constants/navigation.js'
   >
     {
       navItems.map(link => (
-        <a class='hover:text-blue-500 transition-all' aria-label={link.label} href={link.url}>
+        <a
+          class='hover:text-blue-500 transition-all'
+          aria-label={`Enlace a ${link.label}`}
+          href={link.url}
+          id={`desktop-${link.label}`}
+        >
           {link.title}
         </a>
       ))
@@ -48,8 +53,9 @@ import { navItems } from '../constants/navigation.js'
         navItems.map(link => (
           <a
             class='hover:text-blue-500 transition-all text-lg'
-            aria-label={link.label}
+            aria-label={`Enlace a ${link.label}`}
             href={link.url}
+            id={`mobile-${link.label}`}
           >
             {link.title}
           </a>
