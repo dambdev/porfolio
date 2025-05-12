@@ -25,7 +25,7 @@ const GITHUB_URLS = {
 
 export const PROJECTS = [
   {
-    title: 'Ceip Outes',
+    title: 'CEIP de Outes',
     description:
       'Un proyecto diseñado para que las familias puedan registrar la asistencia de sus hijos al comedor y a las actividades extraescolares, mientras el colegio gestiona y hace seguimiento de todo de forma digital y eficiente.',
     link: SITES_URLS.ceipOutes,
@@ -55,14 +55,16 @@ export const PROJECTS = [
   },
   {
     title: 'Tic Tac Toe',
-    description: 'Clásico juego Tic Tac Toe en el que jugarás contra la IA.',
+    description:
+      'Versión moderna del clásico juego tres en raya donde podrás enfrentarte a una IA que responde a tus movimientos. Incluye interfaz minimalista y animaciones fluidas para una experiencia de juego agradable.',
     link: SITES_URLS.ticTacToe,
     image: ticTacToeImg,
     tags: [{ icon: ReactIcon }, { icon: JSIcon }, { icon: TailwindIcon }]
   },
   {
     title: 'Timeline',
-    description: 'Aplicación que transforma un JSON con eventos en una línea temporal visual.',
+    description:
+      'Herramienta interactiva que convierte datos estructurados en formato JSON sobre el juego Zelda en una elegante línea temporal visual con la opción de añadir nuevos eventos.',
     link: SITES_URLS.timeline,
     github: GITHUB_URLS.timeline,
     image: timelineImg,
