@@ -1,18 +1,57 @@
 export function initActiveNav() {
-  const $navAElements = [...document.querySelectorAll('header nav a')]
+  const $navLinks = [...document.querySelectorAll('header nav a')]
+  const sections = []
+
+  $navLinks.forEach(link => {
+    const href = link.getAttribute('href')
+    if (!href || !href.includes('#')) return
+
+    const id = href.replace(/.*#/, '')
+    const element = document.getElementById(id)
+
+    if (element) {
+      sections.push({
+        id,
+        element,
+        links: $navLinks.filter(a => a.getAttribute('href')?.includes(`#${id}`))
+      })
+    }
+  })
+
+  let ticking = false
+
+  function highlightActiveSection() {
+    const scrollY = window.scrollY
+
+    let currentSection = null
+
+    for (const section of sections) {
+      const offset = window.innerWidth >= 1024 ? 150 : 120
+
+      if (scrollY >= section.element.offsetTop - offset) {
+        currentSection = section
+      } else {
+        break
+      }
+    }
+
+    $navLinks.forEach(link => link.classList.remove('text-blue-500'))
+
+    if (currentSection) {
+      currentSection.links.forEach(link => link.classList.add('text-blue-500'))
+    }
+
+    ticking = false
+  }
 
   window.addEventListener('scroll', () => {
-    $navAElements.forEach(a => {
-      const selectionForSection = a.getAttribute('href')
-      if (selectionForSection) {
-        const sectionId = selectionForSection.substring(1)
-        const sectionElement = document.querySelector(`${sectionId}`)
-        if (!sectionElement) return
-        const selectionTop = sectionElement.offsetTop - (window.innerWidth >= 1024 ? 129 : 97)
-        if (window.scrollY <= selectionTop) return
-        $navAElements.forEach(aToRemove => aToRemove.classList.remove('text-blue-500'))
-        a.classList.add('text-blue-500')
-      }
-    })
+    if (!ticking) {
+      window.requestAnimationFrame(highlightActiveSection)
+      ticking = true
+    }
   })
+
+  highlightActiveSection()
+
+  window.addEventListener('resize', highlightActiveSection)
 }
