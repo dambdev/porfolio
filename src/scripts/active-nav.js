@@ -4,9 +4,9 @@ export function initActiveNav() {
 
   $navLinks.forEach(link => {
     const href = link.getAttribute('href')
-    if (!href || !href.includes('#')) return
+    if (!href?.includes('#')) return
 
-    const id = href.replace(/.*#/, '')
+    const id = href.substring(href.lastIndexOf('#') + 1)
     const element = document.getElementById(id)
 
     if (element) {
