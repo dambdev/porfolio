@@ -1,6 +1,7 @@
 ---
 import Badge from '../components/Badge.astro'
 import SocialPill from '../components/SocialPill.astro'
+import CVIcon from '../icons/CV.astro'
 import LinkedInIcon from '../icons/LinkedIn.astro'
 import MailIcon from '../icons/Mail.astro'
 ---
@@ -19,5 +20,9 @@ import MailIcon from '../icons/Mail.astro'
   <SocialPill href='https://linkedin.com/in/dambdev' target='_blank'>
     <LinkedInIcon class='size-4' />
     LinkedIn
+  </SocialPill>
+  <SocialPill href='/CV-David-Miras-Bellon.pdf' download='CV-David-Miras-Bellon.pdf'>
+    <CVIcon class='size-4' />
+    Descargar CV
   </SocialPill>
 </nav>
