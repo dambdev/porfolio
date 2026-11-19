@@ -1,0 +1,20 @@
+# pnpm 11 ya no lee el campo `pnpm` de package.json: la lista de builds
+# permitidos y los overrides viven aquí (antes estaban en package.json y se
+# ignoraban en silencio).
+allowBuilds:
+  esbuild: true
+
+# Suelos por rama mayor: no frenan futuras subidas compatibles, solo impiden
+# bajar de la versión parcheada si cambia el árbol de dependencias.
+# Revisado con pnpm audit el 19/11/2026. Todo es de compilación o de lint: la
+# web se publica como HTML estático (dist/).
+overrides:
+  # astro>unstorage>anymatch: ReDoS e inyección de métodos en clases POSIX.
+  'picomatch@2': '^2.3.2'
+  # astro>magicast: bloqueo del proceso con offsets de secciones indexadas.
+  'source-map-js': '>=1.2.2'
+  # vite>esbuild: lectura de ficheros desde el servidor de desarrollo en Windows.
+  'esbuild': '>=0.28.1'
+  # Solo lint (eslint y typescript-eslint).
+  '@humanfs/node': '>=0.16.8'
+  'minimatch@9': '>=11.0.1 <12'
