@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "postbuild": "test ! -f /etc/nginx/lua/insert_nonce_placeholders.sh || bash /etc/nginx/lua/insert_nonce_placeholders.sh \"$(pwd)/dist\"",
     "preview": "astro preview",
     "astro": "astro"
   },
