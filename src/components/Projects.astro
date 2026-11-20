@@ -36,13 +36,13 @@ import LinkButton from './LinkButton.astro'
               <p class='my-8 text-gray-700 dark:text-gray-400'>{project.description}</p>
               <footer class='flex gap-x-4'>
                 {project.github && (
-                  <LinkButton href={project.github} icon={GitHubIcon}>
+                  <LinkButton href={project.github}>
                     <GitHubIcon class='size-4' aria-hidden='true' />
                     Código
                   </LinkButton>
                 )}
                 {project.link && (
-                  <LinkButton href={project.link} icon={LinkIcon}>
+                  <LinkButton href={project.link}>
                     <LinkIcon class='size-4' aria-hidden='true' />
                     Ver
                   </LinkButton>
